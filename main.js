@@ -22,6 +22,20 @@ function createPostElement(post, user) {
   const postElement = document.createElement("article");
   postElement.classList.add("post");
 
+  const headerElement = document.createElement("div");
+  headerElement.classList.add("padding", "header");
+  postElement.appendChild(headerElement);
+
+  const profileImage = document.createElement("img");
+  profileImage.classList.add("profile-image");
+  profileImage.src = user.profile_image;
+  headerElement.appendChild(profileImage);
+
+  const userNameElement = document.createElement("h4");
+  userNameElement.classList.add("padding");
+  userNameElement.innerText = user.name;
+  headerElement.appendChild(userNameElement);
+
   const imageElement = document.createElement("img");
   imageElement.src = post.image;
   postElement.appendChild(imageElement);
