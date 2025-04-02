@@ -11,4 +11,8 @@ async function loadData() {
   posts = postJSON.posts;
 }
 
+function getUserById(id) {
+  return users.find((user) => user.id === id);
+}
+
 loadData();
